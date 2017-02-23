@@ -82,7 +82,7 @@ Terminal::p_dispatch_csi(uint8_t c)
         break;
 
     case 0x46: // F
-        if (m_parse.m_int == " ") // 0x20
+        if (m_parse.m_int == " ") { // 0x20
             if (m_parse.m_parm.empty()) {
                 return JFY();
             } else {
@@ -91,6 +91,7 @@ Terminal::p_dispatch_csi(uint8_t c)
                     handled &= JFY(p);
                 return handled;
             }
+        }
 
         if (m_parse.m_int == "")
             return CPL(p(0));
@@ -106,7 +107,7 @@ Terminal::p_dispatch_csi(uint8_t c)
         break;
 
     case 0x48: // H
-        if (m_parse.m_int == " ") // 0x20
+        if (m_parse.m_int == " ") { // 0x20
             if (m_parse.m_parm.empty()) {
                 return QUAD();
             } else {
@@ -115,6 +116,7 @@ Terminal::p_dispatch_csi(uint8_t c)
                     handled &= QUAD(p);
                 return handled;
             }
+        }
 
         if (m_parse.m_int == "")
             return CUP(p(0), p(1));
@@ -248,7 +250,7 @@ Terminal::p_dispatch_csi(uint8_t c)
             if (m_parse.m_parm.size() == 1)
                 return FNK(p(0));
 
-        if (m_parse.m_int == "")
+        if (m_parse.m_int == "") {
             if (m_parse.m_parm.empty()) {
                 return CTC();
             } else {
@@ -257,6 +259,7 @@ Terminal::p_dispatch_csi(uint8_t c)
                     handled &= CTC(p);
                 return handled;
             }
+        }
         break;
 
     case 0x58: // X
@@ -301,7 +304,7 @@ Terminal::p_dispatch_csi(uint8_t c)
         break;
 
     case 0x5D: // ]
-        if (m_parse.m_int == " ") // 0x20
+        if (m_parse.m_int == " ") { // 0x20
             if (m_parse.m_parm.empty()) {
                 return SAPV();
             } else {
@@ -310,6 +313,7 @@ Terminal::p_dispatch_csi(uint8_t c)
                     handled &= SAPV(p);
                 return handled;
             }
+        }
 
         if (m_parse.m_int == "")
             return SDS();
@@ -477,7 +481,7 @@ Terminal::p_dispatch_csi(uint8_t c)
         break;
 
     case 0x6D: // m
-        if (m_parse.m_int == "")
+        if (m_parse.m_int == "") {
             if (m_parse.m_parm.empty()) {
                 return SGR(0);
             } else {
@@ -486,6 +490,7 @@ Terminal::p_dispatch_csi(uint8_t c)
                     handled &= SGR(p);
                 return handled;
             }
+        }
         break;
 
     case 0x6E: // n
@@ -496,7 +501,7 @@ Terminal::p_dispatch_csi(uint8_t c)
         break;
 
     case 0x6F: // o
-        if (m_parse.m_int == "")
+        if (m_parse.m_int == "") {
             if (m_parse.m_parm.empty()) {
                 return DAQ();
             } else {
@@ -505,6 +510,7 @@ Terminal::p_dispatch_csi(uint8_t c)
                     handled &= DAQ(p);
                 return handled;
             }
+        }
         break;
 
     case 0x70: // p
