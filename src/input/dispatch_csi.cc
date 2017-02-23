@@ -83,9 +83,9 @@ Terminal::p_dispatch_csi(uint8_t c)
 
     case 0x46: // F
         if (m_parse.m_int == " ") // 0x20
-            if (m_parse.m_parm.empty())
+            if (m_parse.m_parm.empty()) {
                 return JFY();
-            else {
+            } else {
                 bool handled = true;
                 for (auto p : m_parse.m_parm)
                     handled &= JFY(p);
@@ -107,9 +107,9 @@ Terminal::p_dispatch_csi(uint8_t c)
 
     case 0x48: // H
         if (m_parse.m_int == " ") // 0x20
-            if (m_parse.m_parm.empty())
+            if (m_parse.m_parm.empty()) {
                 return QUAD();
-            else {
+            } else {
                 bool handled = true;
                 for (auto p : m_parse.m_parm)
                     handled &= QUAD(p);
@@ -249,9 +249,9 @@ Terminal::p_dispatch_csi(uint8_t c)
                 return FNK(p(0));
 
         if (m_parse.m_int == "")
-            if (m_parse.m_parm.empty())
+            if (m_parse.m_parm.empty()) {
                 return CTC();
-            else {
+            } else {
                 bool handled = true;
                 for (auto p : m_parse.m_parm)
                     handled &= CTC(p);
@@ -302,9 +302,9 @@ Terminal::p_dispatch_csi(uint8_t c)
 
     case 0x5D: // ]
         if (m_parse.m_int == " ") // 0x20
-            if (m_parse.m_parm.empty())
+            if (m_parse.m_parm.empty()) {
                 return SAPV();
-            else {
+            } else {
                 bool handled = true;
                 for (auto p : m_parse.m_parm)
                     handled &= SAPV(p);
@@ -478,9 +478,9 @@ Terminal::p_dispatch_csi(uint8_t c)
 
     case 0x6D: // m
         if (m_parse.m_int == "")
-            if (m_parse.m_parm.empty())
+            if (m_parse.m_parm.empty()) {
                 return SGR(0);
-            else {
+            } else {
                 bool handled = true;
                 for (auto p : m_parse.m_parm)
                     handled &= SGR(p);
@@ -497,9 +497,9 @@ Terminal::p_dispatch_csi(uint8_t c)
 
     case 0x6F: // o
         if (m_parse.m_int == "")
-            if (m_parse.m_parm.empty())
+            if (m_parse.m_parm.empty()) {
                 return DAQ();
-            else {
+            } else {
                 bool handled = true;
                 for (auto p : m_parse.m_parm)
                     handled &= DAQ(p);
