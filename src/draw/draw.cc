@@ -94,7 +94,7 @@ Terminal::draw(const char *str_id, bool *p_open)
 #endif
 
             if (show) {
-                PushStyleColor(ImGuiCol_Text, fg);
+                PushStyleColor(ImGuiCol_Text, static_cast<ImVec4>(fg));
                 TextUnformatted(reinterpret_cast<char*>(&b.buf(r,s,true)),
                                 reinterpret_cast<char*>(&b.buf(r,e,true)));
                 PopStyleColor();
