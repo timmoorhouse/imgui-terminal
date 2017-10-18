@@ -414,7 +414,7 @@ if(Terminal_BUILD_DEMOS)
     find_package(SDL2 REQUIRED)
     find_package(OpenGL REQUIRED)
 
-    add_executable(demo
+    add_executable(imterm
         demo/main.cc
         demo/input.cc
 
@@ -423,14 +423,14 @@ if(Terminal_BUILD_DEMOS)
         external/imgui/examples/sdl_opengl2_example/imgui_impl_sdl.cpp
     )
 
-    target_include_directories(demo
+    target_include_directories(imterm
         PRIVATE
         	external/imgui/examples/sdl_opengl2_example
         	${SDL2_INCLUDE_DIR}
         	${OPENGL_INCLUDE_DIR}
     )
 
-    target_link_libraries(demo
+    target_link_libraries(imterm
         PRIVATE
             terminal
         	${SDL2_LIBRARY}
@@ -438,10 +438,10 @@ if(Terminal_BUILD_DEMOS)
     )
 
     if(UNIX)
-        target_link_libraries(demo PRIVATE util)
+        target_link_libraries(imterm PRIVATE util)
     endif()
 
-    install(TARGETS demo
+    install(TARGETS imterm
         RUNTIME DESTINATION bin
         LIBRARY DESTINATION lib
         ARCHIVE DESTINATION lib
