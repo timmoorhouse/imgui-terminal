@@ -50,7 +50,7 @@ main(int argc, char *argv[])
     SDL_GLContext glcontext = SDL_GL_CreateContext(window);
 
     // Setup ImGui binding
-    ImGui_ImplSdl_Init(window);
+    ImGui_ImplSdlGL2_Init(window);
 
     ImVec4 clear_color = ImColor(114, 144, 154);
 
@@ -81,7 +81,7 @@ main(int argc, char *argv[])
             if (event.type == SDL_QUIT)
                 done = true;
         }
-        ImGui_ImplSdl_NewFrame(window);
+        ImGui_ImplSdlGL2_NewFrame(window);
 
 		if (BeginMainMenuBar()) {
 
@@ -181,7 +181,7 @@ main(int argc, char *argv[])
 #endif
 
     // Cleanup
-    ImGui_ImplSdl_Shutdown();
+    ImGui_ImplSdlGL2_Shutdown();
     SDL_GL_DeleteContext(glcontext);
     SDL_DestroyWindow(window);
     SDL_Quit();

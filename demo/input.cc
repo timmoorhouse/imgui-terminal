@@ -113,7 +113,7 @@ sdl_input_simple(SDL_Event *e)
 
     }
 
-    return ImGui_ImplSdl_ProcessEvent(e);
+    return ImGui_ImplSdlGL2_ProcessEvent(e);
 }
 
 bool
