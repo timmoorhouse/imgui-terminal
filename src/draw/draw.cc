@@ -64,7 +64,7 @@ Terminal::draw(const char *str_id, bool *p_open)
 
             //! @todo make a texture???
             ImVec2 tl = GetCursorScreenPos();
-            ImVec2 br(tl.x+(e-s)*f->FallbackXAdvance, tl.y+f->FontSize+1);
+            ImVec2 br(tl.x+(e-s)*f->FallbackAdvanceX, tl.y+f->FontSize+1);
 
             dl->AddRectFilled(tl, br, bg);
 
@@ -72,7 +72,7 @@ Terminal::draw(const char *str_id, bool *p_open)
             if ((r == b.row(true)) &&
                 (s == b.col(true)) &&
                 dec_mode(dec_mode_t::DECTCEM)) {
-                ImVec2 br(tl.x+f->FallbackXAdvance, tl.y+f->FontSize);
+                ImVec2 br(tl.x+f->FallbackAdvanceX, tl.y+f->FontSize);
                 dl->AddRect(tl, br, GetColorU32(ImGuiCol_Text)); //! @todo fg?
             }
 
