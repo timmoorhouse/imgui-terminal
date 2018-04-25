@@ -119,5 +119,6 @@ sdl_input_simple(SDL_Event *e)
 bool
 sdl_input_accurate(SDL_Event *e)
 {
-
+	//! @todo implement a more accurate input generator
+	return false;
 }

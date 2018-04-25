@@ -3,10 +3,18 @@
 //#include "ascii.hh"
 #include <iostream>
 #include <iomanip>
+
+#ifdef __GNUC__
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wold-style-cast"
+#endif
+
 #include <imgui.h>
+
+#ifdef __GNUC__
 #pragma GCC diagnostic pop
+#endif
+
 #include <cstdarg>
 #include <cstdio>                       // vfprintf
 

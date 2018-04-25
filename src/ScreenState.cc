@@ -1,6 +1,7 @@
 
 #include <terminal/ScreenState.hh>
 #include <terminal/attribute.hh>
+#include <algorithm>
 #include <iostream> //! @todo
 #include <cassert>
 

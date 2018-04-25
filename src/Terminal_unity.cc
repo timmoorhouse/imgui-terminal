@@ -8,7 +8,7 @@
 #include "CursorState.cc"
 #include "ParseState.cc"
 #include "ScreenState.cc"
-#include "Terminal.cc"
+//#include "Terminal.cc"
 
 #include "commands/C0/ACK.cc"
 #include "commands/C0/CAN.cc"

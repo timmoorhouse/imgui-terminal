@@ -1,10 +1,18 @@
 
 #include <terminal/Terminal.hh>
 #include <terminal/attribute.hh>
+
+#ifdef __GNUC__
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wold-style-cast"
+#endif
+
 #include <imgui.h>
+
+#ifdef __GNUC__
 #pragma GCC diagnostic pop
+#endif
+
 #include <iostream> //! @todo
 #include <iomanip> //! @todo
 #include <cmath>                        // fmodf

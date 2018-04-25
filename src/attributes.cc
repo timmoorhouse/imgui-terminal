@@ -1,9 +1,16 @@
 
 #include <terminal/Terminal.hh>
+
+#ifdef __GNUC__
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wold-style-cast"
+#endif
+
 #include <imgui.h>
+
+#ifdef __GNUC__
 #pragma GCC diagnostic pop
+#endif
 
 using namespace ImGui;
 
