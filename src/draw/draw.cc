@@ -103,8 +103,8 @@ Terminal::draw(const char *str_id, bool *p_open)
 
             if (show) {
                 PushStyleColor(ImGuiCol_Text, static_cast<ImVec4>(fg));
-                TextUnformatted(reinterpret_cast<char*>(&b.buf(r,s,true)),
-                                reinterpret_cast<char*>(&b.buf(r,e,true)));
+                TextUnformatted(reinterpret_cast<char*>(b.bufp(r,s,true)),
+                                reinterpret_cast<char*>(b.bufp(r,e,true)));
                 PopStyleColor();
 
                 if (m & ATTR_UNDERLINE)

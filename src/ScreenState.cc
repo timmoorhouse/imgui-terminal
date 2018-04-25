@@ -83,6 +83,14 @@ ScreenState::col_of(uint32_t index, bool overall) const
     return (index % m_width) + 1;
 }
 
+uint8_t *
+ScreenState::bufp(uint32_t r, uint32_t c, bool overall)
+{
+    // note: this can be one past the end column when finding
+    // the end iterator of a range to draw
+    return m_screen.data() + index(r, c, overall);
+}
+
 uint8_t &
 ScreenState::buf(uint32_t r, uint32_t c, bool overall)
 {

@@ -45,6 +45,7 @@ public:
 
 	uint32_t col_of(uint32_t index, bool overall = false) const;
 
+	uint8_t *bufp(uint32_t r, uint32_t c, bool overall = false);
 	uint8_t &buf(uint32_t r, uint32_t c, bool overall = false);
 
 	uint64_t &attr(uint32_t r, uint32_t c, bool overall = false);
